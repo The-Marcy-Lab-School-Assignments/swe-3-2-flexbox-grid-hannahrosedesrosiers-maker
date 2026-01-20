@@ -1,48 +1,140 @@
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html,
+body {
+  width: 100dvw;
+  height: 100dvh;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: black;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
 img {
   width: 100%;
+  display: block;
 }
 
 ul {
   list-style: none;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  color: #333;
-  padding: 20px;
+
+.main-content {
+  flex-grow: 1;
 }
 
-header {
+.site-header {
+  display: flex;
+  align-items: center;
   padding-bottom: 20px;
-  border-bottom: 1px solid #d1d1d1;
+  border-bottom: 1px solid black;
 }
 
-nav > a {
-  font-size: 1.3rem;
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-nav > a:hover {
-  text-decoration: underline;
-}
-
-header > input {
-  padding: 10px 20px;
-}
-
-footer {
-  border-top: 1px solid #d1d1d1;
+.site-footer {
+  border-top: 1px solid black;
   padding-top: 20px;
 }
 
-/* ================================ */
-/* Add your CSS below this line */
-/* ================================ */
+.footer-text {
+  font-size: 0.9rem;
+}
+
+
+.logo {
+  font-weight: bold;
+}
+
+.main-nav {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-link {
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.search-input {
+  padding: 10px 20px;
+}
+
+
+.page-title {
+  padding: 40px 0;
+}
+
+.shop-section {
+  display: flex;
+  gap: 40px;
+}
+
+
+
+.category-list {
+  min-width: 180px;
+}
+
+.category-item {
+  padding: 5px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: gray;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.product-category,
+.product-price {
+  color: gray;
+}
+
+
+@media (max-width: 768px) {
+  .shop-section {
+    flex-direction: column;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
